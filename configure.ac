@@ -558,12 +558,6 @@ AC_CONFIG_FILES([Makefile tesseract.pc])
 AC_CONFIG_FILES([tessdata/Makefile])
 AC_CONFIG_FILES([tessdata/configs/Makefile])
 AC_CONFIG_FILES([tessdata/tessconfigs/Makefile])
-AC_CONFIG_FILES([java/Makefile])
-AC_CONFIG_FILES([java/com/Makefile])
-AC_CONFIG_FILES([java/com/google/Makefile])
-AC_CONFIG_FILES([java/com/google/scrollview/Makefile])
-AC_CONFIG_FILES([java/com/google/scrollview/events/Makefile])
-AC_CONFIG_FILES([java/com/google/scrollview/ui/Makefile])
 AC_CONFIG_FILES([nsis/Makefile])
 AC_OUTPUT
 
