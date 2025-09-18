@@ -13,9 +13,6 @@ endif
 EXTRA_DIST = README.md LICENSE
 EXTRA_DIST += aclocal.m4 config configure.ac autogen.sh
 EXTRA_DIST += tesseract.pc.in doc
-if !GRAPHICS_DISABLED
-EXTRA_DIST += java
-endif
 EXTRA_DIST += CMakeLists.txt tesseract.pc.cmake cmake VERSION
 
 DIST_SUBDIRS = $(SUBDIRS)
