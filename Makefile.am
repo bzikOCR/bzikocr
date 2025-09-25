@@ -221,12 +221,6 @@ noinst_HEADERS += src/ccmain/tesseractclass.h
 noinst_HEADERS += src/ccmain/tessvars.h
 noinst_HEADERS += src/ccmain/thresholder.h
 noinst_HEADERS += src/ccmain/werdit.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/ccmain/docqual.h
-noinst_HEADERS += src/ccmain/equationdetect.h
-noinst_HEADERS += src/ccmain/fixspace.h
-noinst_HEADERS += src/ccmain/reject.h
-endif
 
 libtesseract_la_SOURCES += src/ccmain/applybox.cpp
 libtesseract_la_SOURCES += src/ccmain/control.cpp
@@ -249,19 +243,6 @@ libtesseract_la_SOURCES += src/ccmain/tesseractclass.cpp
 libtesseract_la_SOURCES += src/ccmain/tessvars.cpp
 libtesseract_la_SOURCES += src/ccmain/thresholder.cpp
 libtesseract_la_SOURCES += src/ccmain/werdit.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/ccmain/adaptions.cpp
-libtesseract_la_SOURCES += src/ccmain/docqual.cpp
-libtesseract_la_SOURCES += src/ccmain/equationdetect.cpp
-libtesseract_la_SOURCES += src/ccmain/fixspace.cpp
-libtesseract_la_SOURCES += src/ccmain/fixxht.cpp
-libtesseract_la_SOURCES += src/ccmain/osdetect.cpp
-libtesseract_la_SOURCES += src/ccmain/par_control.cpp
-libtesseract_la_SOURCES += src/ccmain/recogtraining.cpp
-libtesseract_la_SOURCES += src/ccmain/superscript.cpp
-libtesseract_la_SOURCES += src/ccmain/tessbox.cpp
-libtesseract_la_SOURCES += src/ccmain/tfacepp.cpp
-endif
 
 # Rules for src/ccstruct.
 
@@ -303,10 +284,6 @@ noinst_HEADERS += src/ccstruct/split.h
 noinst_HEADERS += src/ccstruct/statistc.h
 noinst_HEADERS += src/ccstruct/stepblob.h
 noinst_HEADERS += src/ccstruct/werd.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/ccstruct/fontinfo.h
-noinst_HEADERS += src/ccstruct/params_training_featdef.h
-endif
 
 libtesseract_la_SOURCES += src/ccstruct/blamer.cpp
 libtesseract_la_SOURCES += src/ccstruct/blobbox.cpp
@@ -344,11 +321,6 @@ libtesseract_la_SOURCES += src/ccstruct/statistc.cpp
 libtesseract_la_SOURCES += src/ccstruct/stepblob.cpp
 libtesseract_la_SOURCES += src/ccstruct/werd.cpp
 
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/ccstruct/fontinfo.cpp
-libtesseract_la_SOURCES += src/ccstruct/params_training_featdef.cpp
-endif
-
 # Rules for src/ccutil
 
 libtesseract_ccutil_la_CPPFLAGS = $(AM_CPPFLAGS)
@@ -381,12 +353,6 @@ noinst_HEADERS += src/ccutil/unicharcompress.h
 noinst_HEADERS += src/ccutil/unicharmap.h
 noinst_HEADERS += src/ccutil/unicharset.h
 noinst_HEADERS += src/ccutil/unicity_table.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/ccutil/ambigs.h
-noinst_HEADERS += src/ccutil/bitvector.h
-noinst_HEADERS += src/ccutil/indexmapbidi.h
-noinst_HEADERS += src/ccutil/universalambigs.h
-endif
 
 noinst_LTLIBRARIES += libtesseract_ccutil.la
 
@@ -401,84 +367,12 @@ libtesseract_ccutil_la_SOURCES += src/ccutil/unicharcompress.cpp
 libtesseract_ccutil_la_SOURCES += src/ccutil/unicharmap.cpp
 libtesseract_ccutil_la_SOURCES += src/ccutil/unicharset.cpp
 libtesseract_ccutil_la_SOURCES += src/ccutil/params.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_ccutil_la_SOURCES += src/ccutil/ambigs.cpp
-libtesseract_ccutil_la_SOURCES += src/ccutil/bitvector.cpp
-libtesseract_ccutil_la_SOURCES += src/ccutil/indexmapbidi.cpp
-endif
 
 # Rules for src/classify.
 
 noinst_HEADERS += src/classify/classify.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/classify/adaptive.h
-noinst_HEADERS += src/classify/cluster.h
-noinst_HEADERS += src/classify/clusttool.h
-noinst_HEADERS += src/classify/featdefs.h
-noinst_HEADERS += src/classify/float2int.h
-noinst_HEADERS += src/classify/fpoint.h
-noinst_HEADERS += src/classify/intfeaturespace.h
-noinst_HEADERS += src/classify/intfx.h
-noinst_HEADERS += src/classify/intmatcher.h
-noinst_HEADERS += src/classify/intproto.h
-noinst_HEADERS += src/classify/kdtree.h
-noinst_HEADERS += src/classify/mf.h
-noinst_HEADERS += src/classify/mfdefs.h
-noinst_HEADERS += src/classify/mfoutline.h
-noinst_HEADERS += src/classify/mfx.h
-noinst_HEADERS += src/classify/normfeat.h
-noinst_HEADERS += src/classify/normmatch.h
-noinst_HEADERS += src/classify/ocrfeatures.h
-noinst_HEADERS += src/classify/outfeat.h
-noinst_HEADERS += src/classify/picofeat.h
-noinst_HEADERS += src/classify/protos.h
-noinst_HEADERS += src/classify/shapeclassifier.h
-noinst_HEADERS += src/classify/shapetable.h
-noinst_HEADERS += src/classify/tessclassifier.h
-noinst_HEADERS += src/classify/trainingsample.h
-endif
 
 libtesseract_la_SOURCES += src/classify/classify.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/classify/adaptive.cpp
-libtesseract_la_SOURCES += src/classify/adaptmatch.cpp
-libtesseract_la_SOURCES += src/classify/blobclass.cpp
-libtesseract_la_SOURCES += src/classify/cluster.cpp
-libtesseract_la_SOURCES += src/classify/clusttool.cpp
-libtesseract_la_SOURCES += src/classify/cutoffs.cpp
-libtesseract_la_SOURCES += src/classify/featdefs.cpp
-libtesseract_la_SOURCES += src/classify/float2int.cpp
-libtesseract_la_SOURCES += src/classify/fpoint.cpp
-libtesseract_la_SOURCES += src/classify/intfeaturespace.cpp
-libtesseract_la_SOURCES += src/classify/intfx.cpp
-libtesseract_la_SOURCES += src/classify/intmatcher.cpp
-libtesseract_la_SOURCES += src/classify/intproto.cpp
-libtesseract_la_SOURCES += src/classify/kdtree.cpp
-libtesseract_la_SOURCES += src/classify/mf.cpp
-libtesseract_la_SOURCES += src/classify/mfoutline.cpp
-libtesseract_la_SOURCES += src/classify/mfx.cpp
-libtesseract_la_SOURCES += src/classify/normfeat.cpp
-libtesseract_la_SOURCES += src/classify/normmatch.cpp
-libtesseract_la_SOURCES += src/classify/ocrfeatures.cpp
-libtesseract_la_SOURCES += src/classify/outfeat.cpp
-libtesseract_la_SOURCES += src/classify/picofeat.cpp
-libtesseract_la_SOURCES += src/classify/protos.cpp
-libtesseract_la_SOURCES += src/classify/shapeclassifier.cpp
-libtesseract_la_SOURCES += src/classify/shapetable.cpp
-libtesseract_la_SOURCES += src/classify/tessclassifier.cpp
-libtesseract_la_SOURCES += src/classify/trainingsample.cpp
-endif
-
-# Rules for src/cutil.
-
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/cutil/bitvec.h
-noinst_HEADERS += src/cutil/oldlist.h
-endif
-
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/cutil/oldlist.cpp
-endif
 
 # Rules for src/dict.
 
@@ -495,10 +389,6 @@ libtesseract_la_SOURCES += src/dict/dawg_cache.cpp
 libtesseract_la_SOURCES += src/dict/dict.cpp
 libtesseract_la_SOURCES += src/dict/stopper.cpp
 libtesseract_la_SOURCES += src/dict/trie.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/dict/hyphen.cpp
-libtesseract_la_SOURCES += src/dict/permdawg.cpp
-endif
 
 # Rules for src/lstm.
 
@@ -595,9 +485,6 @@ noinst_HEADERS += src/textord/tovars.h
 noinst_HEADERS += src/textord/underlin.h
 noinst_HEADERS += src/textord/wordseg.h
 noinst_HEADERS += src/textord/workingpartset.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/textord/equationdetectbase.h
-endif
 
 libtesseract_la_SOURCES += src/textord/alignedblob.cpp
 libtesseract_la_SOURCES += src/textord/baselinedetect.cpp
@@ -638,9 +525,6 @@ libtesseract_la_SOURCES += src/textord/tovars.cpp
 libtesseract_la_SOURCES += src/textord/underlin.cpp
 libtesseract_la_SOURCES += src/textord/wordseg.cpp
 libtesseract_la_SOURCES += src/textord/workingpartset.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/textord/equationdetectbase.cpp
-endif
 
 # Rules for src/viewer.
 
@@ -664,44 +548,9 @@ endif
 # Rules for src/wordrec.
 
 noinst_HEADERS += src/wordrec/wordrec.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/wordrec/associate.h
-noinst_HEADERS += src/wordrec/chop.h
-noinst_HEADERS += src/wordrec/drawfx.h
-noinst_HEADERS += src/wordrec/findseam.h
-noinst_HEADERS += src/wordrec/language_model.h
-noinst_HEADERS += src/wordrec/lm_consistency.h
-noinst_HEADERS += src/wordrec/lm_pain_points.h
-noinst_HEADERS += src/wordrec/lm_state.h
-noinst_HEADERS += src/wordrec/outlines.h
-noinst_HEADERS += src/wordrec/params_model.h
-noinst_HEADERS += src/wordrec/plotedges.h
-noinst_HEADERS += src/wordrec/render.h
-endif
 
 libtesseract_la_SOURCES += src/wordrec/tface.cpp
 libtesseract_la_SOURCES += src/wordrec/wordrec.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_la_SOURCES += src/wordrec/associate.cpp
-libtesseract_la_SOURCES += src/wordrec/chop.cpp
-libtesseract_la_SOURCES += src/wordrec/chopper.cpp
-libtesseract_la_SOURCES += src/wordrec/drawfx.cpp
-libtesseract_la_SOURCES += src/wordrec/findseam.cpp
-libtesseract_la_SOURCES += src/wordrec/gradechop.cpp
-libtesseract_la_SOURCES += src/wordrec/language_model.cpp
-libtesseract_la_SOURCES += src/wordrec/lm_consistency.cpp
-libtesseract_la_SOURCES += src/wordrec/lm_pain_points.cpp
-libtesseract_la_SOURCES += src/wordrec/lm_state.cpp
-libtesseract_la_SOURCES += src/wordrec/outlines.cpp
-libtesseract_la_SOURCES += src/wordrec/params_model.cpp
-libtesseract_la_SOURCES += src/wordrec/pieces.cpp
-if !GRAPHICS_DISABLED
-libtesseract_la_SOURCES += src/wordrec/plotedges.cpp
-endif
-libtesseract_la_SOURCES += src/wordrec/render.cpp
-libtesseract_la_SOURCES += src/wordrec/segsearch.cpp
-libtesseract_la_SOURCES += src/wordrec/wordclass.cpp
-endif
 
 # Rules for tesseract executable.
 
@@ -787,9 +636,7 @@ training_CPPFLAGS += $(ICU_UC_CFLAGS) $(ICU_I18N_CFLAGS)
 training_CPPFLAGS += $(pango_CFLAGS)
 training_CPPFLAGS += $(cairo_CFLAGS)
 
-if DISABLED_LEGACY_ENGINE
 training_CPPFLAGS += -DDISABLED_LEGACY_ENGINE
-endif
 
 # TODO: training programs cannot be linked to shared library created
 # with -fvisibility
@@ -820,15 +667,6 @@ noinst_HEADERS += src/training/unicharset/validate_javanese.h
 noinst_HEADERS += src/training/unicharset/validate_khmer.h
 noinst_HEADERS += src/training/unicharset/validate_myanmar.h
 noinst_HEADERS += src/training/unicharset/validator.h
-if !DISABLED_LEGACY_ENGINE
-noinst_HEADERS += src/training/common/errorcounter.h
-noinst_HEADERS += src/training/common/intfeaturedist.h
-noinst_HEADERS += src/training/common/intfeaturemap.h
-noinst_HEADERS += src/training/common/mastertrainer.h
-noinst_HEADERS += src/training/common/sampleiterator.h
-noinst_HEADERS += src/training/common/trainingsampleset.h
-noinst_HEADERS += src/training/mergenf.h
-endif
 
 CLEANFILES += libtesseract_training.la
 
@@ -858,14 +696,6 @@ libtesseract_training_la_SOURCES += src/training/unicharset/validate_javanese.cp
 libtesseract_training_la_SOURCES += src/training/unicharset/validate_khmer.cpp
 libtesseract_training_la_SOURCES += src/training/unicharset/validate_myanmar.cpp
 libtesseract_training_la_SOURCES += src/training/unicharset/validator.cpp
-if !DISABLED_LEGACY_ENGINE
-libtesseract_training_la_SOURCES += src/training/common/errorcounter.cpp
-libtesseract_training_la_SOURCES += src/training/common/intfeaturedist.cpp
-libtesseract_training_la_SOURCES += src/training/common/intfeaturemap.cpp
-libtesseract_training_la_SOURCES += src/training/common/mastertrainer.cpp
-libtesseract_training_la_SOURCES += src/training/common/sampleiterator.cpp
-libtesseract_training_la_SOURCES += src/training/common/trainingsampleset.cpp
-endif
 
 trainingtools = combine_lang_model$(EXEEXT)
 trainingtools += combine_tessdata$(EXEEXT)
@@ -877,13 +707,6 @@ trainingtools += set_unicharset_properties$(EXEEXT)
 trainingtools += text2image$(EXEEXT)
 trainingtools += unicharset_extractor$(EXEEXT)
 trainingtools += wordlist2dawg$(EXEEXT)
-if !DISABLED_LEGACY_ENGINE
-trainingtools += ambiguous_words$(EXEEXT)
-trainingtools += classifier_tester$(EXEEXT)
-trainingtools += cntraining$(EXEEXT)
-trainingtools += mftraining$(EXEEXT)
-trainingtools += shapeclustering$(EXEEXT)
-endif
 
 $(trainingtools): libtesseract.la
 
@@ -894,34 +717,6 @@ extralib += $(libarchive_LIBS)
 extralib += $(LEPTONICA_LIBS)
 if T_WIN
 extralib += -lws2_32
-endif
-
-if !DISABLED_LEGACY_ENGINE
-ambiguous_words_CPPFLAGS = $(training_CPPFLAGS)
-ambiguous_words_SOURCES = src/training/ambiguous_words.cpp
-ambiguous_words_LDADD = libtesseract_training.la
-ambiguous_words_LDADD += $(extralib)
-
-classifier_tester_CPPFLAGS = $(training_CPPFLAGS)
-classifier_tester_SOURCES = src/training/classifier_tester.cpp
-classifier_tester_LDADD = libtesseract_training.la
-classifier_tester_LDADD += $(extralib)
-
-cntraining_CPPFLAGS = $(training_CPPFLAGS)
-cntraining_SOURCES = src/training/cntraining.cpp
-cntraining_LDADD = libtesseract_training.la
-cntraining_LDADD += $(extralib)
-
-mftraining_CPPFLAGS = $(training_CPPFLAGS)
-mftraining_SOURCES = src/training/mftraining.cpp src/training/mergenf.cpp
-mftraining_LDADD = libtesseract_training.la
-mftraining_LDADD += $(ICU_UC_LIBS)
-mftraining_LDADD += $(extralib)
-
-shapeclustering_CPPFLAGS = $(training_CPPFLAGS)
-shapeclustering_SOURCES = src/training/shapeclustering.cpp
-shapeclustering_LDADD = libtesseract_training.la
-shapeclustering_LDADD += $(extralib)
 endif
 
 combine_lang_model_CPPFLAGS = $(training_CPPFLAGS)
@@ -1039,15 +834,6 @@ man_MANS += doc/unicharset.5
 man_MANS += doc/unicharset_extractor.1
 man_MANS += doc/wordlist2dawg.1
 
-if !DISABLED_LEGACY_ENGINE
-man_MANS += doc/ambiguous_words.1
-man_MANS += doc/classifier_tester.1
-man_MANS += doc/cntraining.1
-man_MANS += doc/mftraining.1
-man_MANS += doc/shapeclustering.1
-man_MANS += doc/unicharambigs.5
-endif
-
 man_xslt = http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl
 
 EXTRA_DIST += $(man_MANS) doc/Doxyfile
@@ -1101,9 +887,7 @@ unittest_CPPFLAGS += -DTESSDATA_DIR="\"$(TESSDATA_DIR)\""
 unittest_CPPFLAGS += -DTESTING_DIR="\"$(TESTING_DIR)\""
 unittest_CPPFLAGS += -DTESTDATA_DIR="\"$(TESTDATA_DIR)\""
 unittest_CPPFLAGS += -DPANGO_ENABLE_ENGINE
-if DISABLED_LEGACY_ENGINE
 unittest_CPPFLAGS += -DDISABLED_LEGACY_ENGINE
-endif # DISABLED_LEGACY_ENGINE
 unittest_CPPFLAGS += -DTESS_COMMON_TRAINING_API=
 unittest_CPPFLAGS += -DTESS_PANGO_TRAINING_API=
 unittest_CPPFLAGS += -DTESS_UNICHARSET_TRAINING_API=
@@ -1164,14 +948,8 @@ unittest_CPPFLAGS += -isystem $(top_srcdir)/unittest/third_party/googletest/goog
 
 check_PROGRAMS = apiexample_test
 if ENABLE_TRAINING
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += applybox_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += baseapi_test
 check_PROGRAMS += baseapi_thread_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += bitvector_test
-endif # !DISABLED_LEGACY_ENGINE
 endif # ENABLE_TRAINING
 check_PROGRAMS += cleanapi_test
 check_PROGRAMS += colpartition_test
@@ -1180,16 +958,9 @@ check_PROGRAMS += commandlineflags_test
 check_PROGRAMS += dawg_test
 endif # ENABLE_TRAINING
 check_PROGRAMS += denorm_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += equationdetect_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += fileio_test
 check_PROGRAMS += heap_test
 check_PROGRAMS += imagedata_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += indexmapbidi_test
-check_PROGRAMS += intfeaturemap_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += intsimdmatrix_test
 check_PROGRAMS += lang_model_test
 check_PROGRAMS += layout_test
@@ -1203,35 +974,23 @@ check_PROGRAMS += lstm_test
 check_PROGRAMS += lstmtrainer_test
 endif # ENABLE_TRAINING
 check_PROGRAMS += loadlang_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += mastertrainer_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += matrix_test
 check_PROGRAMS += networkio_test
 if ENABLE_TRAINING
 check_PROGRAMS += normstrngs_test
 endif # ENABLE_TRAINING
 check_PROGRAMS += nthitem_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += osd_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += pagesegmode_test
 if ENABLE_TRAINING
 check_PROGRAMS += pango_font_info_test
 endif # ENABLE_TRAINING
 check_PROGRAMS += paragraphs_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += params_model_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += progress_test
 check_PROGRAMS += qrsequence_test
 check_PROGRAMS += recodebeam_test
 check_PROGRAMS += rect_test
 check_PROGRAMS += resultiterator_test
 check_PROGRAMS += scanutils_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += shapetable_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += stats_test
 check_PROGRAMS += stridemap_test
 check_PROGRAMS += stringrenderer_test
@@ -1239,9 +998,6 @@ check_PROGRAMS += tablefind_test
 check_PROGRAMS += tablerecog_test
 check_PROGRAMS += tabvector_test
 check_PROGRAMS += tatweel_test
-if !DISABLED_LEGACY_ENGINE
-check_PROGRAMS += textlineprojection_test
-endif # !DISABLED_LEGACY_ENGINE
 check_PROGRAMS += tfile_test
 if ENABLE_TRAINING
 check_PROGRAMS += unichar_test
@@ -1265,12 +1021,6 @@ apiexample_test_CPPFLAGS = $(unittest_CPPFLAGS)
 apiexample_test_LDFLAGS = $(LEPTONICA_LIBS)
 apiexample_test_LDADD = $(TESS_LIBS) $(LEPTONICA_LIBS)
 
-if !DISABLED_LEGACY_ENGINE
-applybox_test_SOURCES = unittest/applybox_test.cc
-applybox_test_CPPFLAGS = $(unittest_CPPFLAGS)
-applybox_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
-
 baseapi_test_SOURCES = unittest/baseapi_test.cc
 baseapi_test_CPPFLAGS = $(unittest_CPPFLAGS)
 baseapi_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
@@ -1278,12 +1028,6 @@ baseapi_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
 baseapi_thread_test_SOURCES = unittest/baseapi_thread_test.cc
 baseapi_thread_test_CPPFLAGS = $(unittest_CPPFLAGS)
 baseapi_thread_test_LDADD = $(TESS_LIBS) $(LEPTONICA_LIBS)
-
-if !DISABLED_LEGACY_ENGINE
-bitvector_test_SOURCES = unittest/bitvector_test.cc
-bitvector_test_CPPFLAGS = $(unittest_CPPFLAGS)
-bitvector_test_LDADD = $(TRAINING_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
 
 cleanapi_test_SOURCES = unittest/cleanapi_test.cc
 cleanapi_test_CPPFLAGS = $(unittest_CPPFLAGS)
@@ -1305,12 +1049,6 @@ denorm_test_SOURCES = unittest/denorm_test.cc
 denorm_test_CPPFLAGS = $(unittest_CPPFLAGS)
 denorm_test_LDADD = $(TESS_LIBS)
 
-if !DISABLED_LEGACY_ENGINE
-equationdetect_test_SOURCES = unittest/equationdetect_test.cc
-equationdetect_test_CPPFLAGS = $(unittest_CPPFLAGS)
-equationdetect_test_LDADD = $(TESS_LIBS) $(LEPTONICA_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
-
 fileio_test_SOURCES = unittest/fileio_test.cc
 fileio_test_CPPFLAGS = $(unittest_CPPFLAGS)
 fileio_test_LDADD = $(TRAINING_LIBS)
@@ -1322,18 +1060,6 @@ heap_test_LDADD = $(TESS_LIBS)
 imagedata_test_SOURCES = unittest/imagedata_test.cc
 imagedata_test_CPPFLAGS = $(unittest_CPPFLAGS)
 imagedata_test_LDADD = $(TRAINING_LIBS)
-
-if !DISABLED_LEGACY_ENGINE
-indexmapbidi_test_SOURCES = unittest/indexmapbidi_test.cc
-indexmapbidi_test_CPPFLAGS = $(unittest_CPPFLAGS)
-indexmapbidi_test_LDADD = $(TRAINING_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
-
-if !DISABLED_LEGACY_ENGINE
-intfeaturemap_test_SOURCES = unittest/intfeaturemap_test.cc
-intfeaturemap_test_CPPFLAGS = $(unittest_CPPFLAGS)
-intfeaturemap_test_LDADD = $(TRAINING_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
 
 intsimdmatrix_test_SOURCES = unittest/intsimdmatrix_test.cc
 intsimdmatrix_test_CPPFLAGS = $(unittest_CPPFLAGS)
@@ -1388,12 +1114,6 @@ lstmtrainer_test_SOURCES = unittest/lstmtrainer_test.cc
 lstmtrainer_test_CPPFLAGS = $(unittest_CPPFLAGS)
 lstmtrainer_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
 
-if !DISABLED_LEGACY_ENGINE
-mastertrainer_test_SOURCES = unittest/mastertrainer_test.cc
-mastertrainer_test_CPPFLAGS = $(unittest_CPPFLAGS)
-mastertrainer_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
-
 matrix_test_SOURCES = unittest/matrix_test.cc
 matrix_test_CPPFLAGS = $(unittest_CPPFLAGS)
 matrix_test_LDADD = $(TESS_LIBS)
@@ -1410,12 +1130,6 @@ nthitem_test_SOURCES = unittest/nthitem_test.cc
 nthitem_test_CPPFLAGS = $(unittest_CPPFLAGS)
 nthitem_test_LDADD = $(TESS_LIBS)
 
-if !DISABLED_LEGACY_ENGINE
-osd_test_SOURCES = unittest/osd_test.cc
-osd_test_CPPFLAGS = $(unittest_CPPFLAGS)
-osd_test_LDADD = $(TESS_LIBS) $(LEPTONICA_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
-
 pagesegmode_test_SOURCES = unittest/pagesegmode_test.cc
 pagesegmode_test_CPPFLAGS = $(unittest_CPPFLAGS)
 pagesegmode_test_LDADD = $(TRAINING_LIBS) $(LEPTONICA_LIBS)
@@ -1430,12 +1144,6 @@ pango_font_info_test_LDADD += $(pangoft2_LIBS)
 paragraphs_test_SOURCES = unittest/paragraphs_test.cc
 paragraphs_test_CPPFLAGS = $(unittest_CPPFLAGS)
 paragraphs_test_LDADD = $(TESS_LIBS)
-
-if !DISABLED_LEGACY_ENGINE
-params_model_test_SOURCES = unittest/params_model_test.cc
-params_model_test_CPPFLAGS = $(unittest_CPPFLAGS)
-params_model_test_LDADD = $(TRAINING_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
 
 progress_test_SOURCES = unittest/progress_test.cc
 progress_test_CPPFLAGS = $(unittest_CPPFLAGS)
@@ -1462,12 +1170,6 @@ resultiterator_test_LDADD += $(LEPTONICA_LIBS) $(ICU_I18N_LIBS) $(ICU_UC_LIBS)
 scanutils_test_SOURCES = unittest/scanutils_test.cc
 scanutils_test_CPPFLAGS = $(unittest_CPPFLAGS)
 scanutils_test_LDADD = $(TRAINING_LIBS)
-
-if !DISABLED_LEGACY_ENGINE
-shapetable_test_SOURCES = unittest/shapetable_test.cc
-shapetable_test_CPPFLAGS = $(unittest_CPPFLAGS)
-shapetable_test_LDADD = $(TRAINING_LIBS)
-endif # !DISABLED_LEGACY_ENGINE
 
 stats_test_SOURCES = unittest/stats_test.cc
 stats_test_CPPFLAGS = $(unittest_CPPFLAGS)
@@ -1548,9 +1250,6 @@ if T_WIN
 apiexample_test_LDADD += -lws2_32
 intsimdmatrix_test_LDADD += -lws2_32
 matrix_test_LDADD += -lws2_32
-if !DISABLED_LEGACY_ENGINE
-osd_test_LDADD += -lws2_32
-endif # !DISABLED_LEGACY_ENGINE
 loadlang_test_LDADD += -lws2_32
 endif
 

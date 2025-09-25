@@ -266,14 +266,7 @@ if test "$enable_graphics" = "no"; then
   AM_CONDITIONAL([GRAPHICS_DISABLED], true)
 fi
 
-AC_MSG_CHECKING([--enable-legacy argument])
-AC_ARG_ENABLE([legacy],
-  AS_HELP_STRING([--disable-legacy], [disable the legacy OCR engine]))
-AC_MSG_RESULT([$enable_legacy])
-AM_CONDITIONAL([DISABLED_LEGACY_ENGINE], test "$enable_legacy" = "no")
-if test "$enable_legacy" = "no"; then
-  AC_DEFINE([DISABLED_LEGACY_ENGINE], [1], [Disable legacy OCR engine])
-fi
+AC_DEFINE([DISABLED_LEGACY_ENGINE], [1], [Disable legacy OCR engine])
 
 # check whether to build OpenMP support
 AC_OPENMP
